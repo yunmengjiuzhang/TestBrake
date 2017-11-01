@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="workPattern"
+            type="cn.com.reformer.brake.vh.WorkPatternVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/title_layout">
+
+            <ImageView
+                android:id="@+id/iv_left"
+                style="@style/title_left"
+                android:onClick="@{workPattern.onBack}" />
+
+            <TextView
+                android:id="@+id/tv_text"
+                style="@style/title_text"
+                android:text="工作模式" />
+
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_right"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:padding="8dp"-->
+            <!--android:text="保存"-->
+            <!--android:textColor="#ffffff"-->
+            <!--android:textSize="18sp" />-->
+        </RelativeLayout>
+
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:text="设备状态"-->
+            <!--android:textColor="#2d345d"-->
+            <!--android:textSize="24sp" />-->
+
+        <!--<ListView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--bind:itemView="@{workPattern.itemView}"-->
+        <!--bind:items="@{workPattern.itemVHs}">-->
+
+        <!--</ListView>-->
+
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:divider="@drawable/list_divider"
+            android:padding="6dp"
+            app:setitem="@{workPattern}">
+
+        </RadioGroup>
+
+        <!--<RadioGroup-->
+        <!--android:id="@+id/rg"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="#ffffff"-->
+        <!--android:divider="@drawable/list_divider"-->
+        <!--android:padding="6dp">-->
+
+        <!--<RadioButton-->
+        <!--android:id="@+id/rb1"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="自动模式，仅靠红外检测自动开关门"-->
+        <!--android:textColor="#a7a9c3"-->
+        <!--android:textSize="18sp" />-->
+
+        <!--<View-->
+        <!--style="@style/divider"-->
+        <!--android:layout_width="312dp"-->
+        <!--android:layout_gravity="right" />-->
+
+        <!--<RadioButton-->
+        <!--android:id="@+id/rb2"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="常开模式，门向前常开"-->
+        <!--android:textColor="#a7a9c3"-->
+        <!--android:textSize="18sp" />-->
+
+        <!--<View-->
+        <!--style="@style/divider"-->
+        <!--android:layout_width="312dp"-->
+        <!--android:layout_gravity="right" />-->
+
+        <!--<RadioButton-->
+        <!--android:id="@+id/rb3"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="常闭模式，门常闭，禁止通行"-->
+        <!--android:textColor="#a7a9c3"-->
+        <!--android:textSize="18sp" />-->
+
+        <!--<View-->
+        <!--style="@style/divider"-->
+        <!--android:layout_width="312dp"-->
+        <!--android:layout_gravity="right" />-->
+
+        <!--<RadioButton-->
+        <!--android:id="@+id/rb4"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="双向卡模式，需要刷卡才能通行"-->
+        <!--android:textColor="#a7a9c3"-->
+        <!--android:textSize="18sp" />-->
+
+        <!--<View-->
+        <!--style="@style/divider"-->
+        <!--android:layout_width="312dp"-->
+        <!--android:layout_gravity="right" />-->
+
+        <!--<RadioButton-->
+        <!--android:id="@+id/rb5"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="卡向前模式，向前刷卡，向后禁止"-->
+        <!--android:textColor="#a7a9c3"-->
+        <!--android:textSize="18sp" />-->
+
+        <!--<View-->
+        <!--style="@style/divider"-->
+        <!--android:layout_width="312dp"-->
+        <!--android:layout_gravity="right" />-->
+
+        <!--<RadioButton-->
+        <!--android:id="@+id/rb6"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="卡向后模式，向后刷卡，向前禁止"-->
+        <!--android:textColor="#a7a9c3"-->
+        <!--android:textSize="18sp" />-->
+
+        <!--<View-->
+        <!--style="@style/divider"-->
+        <!--android:layout_width="312dp"-->
+        <!--android:layout_gravity="right" />-->
+
+        <!--<RadioButton-->
+        <!--android:id="@+id/rb7"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="卡向前后自由模式，向前刷卡，向后自由"-->
+        <!--android:textColor="#a7a9c3"-->
+        <!--android:textSize="18sp" />-->
+
+        <!--<View-->
+        <!--style="@style/divider"-->
+        <!--android:layout_width="312dp"-->
+        <!--android:layout_gravity="right" />-->
+
+        <!--<RadioButton-->
+        <!--android:id="@+id/rb8"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="卡向后前自由模式，向后刷卡，向前自由"-->
+        <!--android:textColor="#a7a9c3"-->
+        <!--android:textSize="18sp" />-->
+
+        <!--<View-->
+        <!--style="@style/divider"-->
+        <!--android:layout_width="312dp"-->
+        <!--android:layout_gravity="right" />-->
+
+        <!--<RadioButton-->
+        <!--android:id="@+id/rb9"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="向后自由向前禁止"-->
+        <!--android:textColor="#a7a9c3"-->
+        <!--android:textSize="18sp" />-->
+
+        <!--<View-->
+        <!--style="@style/divider"-->
+        <!--android:layout_width="312dp"-->
+        <!--android:layout_gravity="right" />-->
+
+        <!--<RadioButton-->
+        <!--android:id="@+id/rb10"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="向前自由向后禁止"-->
+        <!--android:textColor="#a7a9c3"-->
+        <!--android:textSize="18sp" />-->
+
+        <!--</RadioGroup>-->
+
+    </LinearLayout>
+</layout>

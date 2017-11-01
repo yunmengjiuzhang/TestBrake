@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="sky_blue">#880000ff</color>
+    <color name="cb_true">#6d6f9b</color>
+    <color name="cb_false">#a7a9c3</color>
+    <color name="rb_true">#6d6f9b</color>
+    <color name="rb_false">#a7a9c3</color>
+
+    <color name="menu_item_text_color">#E60200</color>
+
+    <color name="my_transparent">#00ffffff</color>
+</resources>

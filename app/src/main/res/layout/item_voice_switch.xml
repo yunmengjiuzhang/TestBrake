@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="voiceSwitchItem"
+            type="cn.com.reformer.brake.vh.VoiceSwitchItemVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="@{voiceSwitchItem.setCheck}"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/rl_message">
+
+            <ImageView
+                android:id="@+id/iv"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/setting_voice" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@id/iv"
+                android:text="@{voiceSwitchItem.name}"
+                android:textColor="@{voiceSwitchItem.isCheck  ? @color/cb_true : @color/cb_false}"
+                android:textSize="16sp" />
+
+            <CheckBox
+                style="@style/switch_my"
+                android:checked="@{voiceSwitchItem.isCheck}"
+                android:clickable="false" />
+
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

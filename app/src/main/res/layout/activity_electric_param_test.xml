@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="electrictest"
+            type="cn.com.reformer.brake.vh.ElectricParamTestVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/title_layout">
+
+            <ImageView
+                style="@style/title_left"
+                android:onClick="@{electrictest.onBack}" />
+
+            <TextView
+                style="@style/title_text"
+                android:text="电机参数(研发)" />
+
+            <ImageView
+                style="@style/title_right"
+                android:onClick="@{electrictest.onRefresh}"
+                android:src="@mipmap/refresh"
+                app:setImageViewFresh="@{electrictest.isRefresh}" />
+        </RelativeLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            app:elecParameTest="@{electrictest}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="主机"
+                        android:textSize="20sp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutAnimation="@anim/anim_layout_left"
+                        app:electrictestmain="@{electrictest}"></android.support.v7.widget.RecyclerView>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="24dp"
+                        android:background="@drawable/selector_btn"
+                        android:gravity="center"
+                        android:onClick="@{electrictest.sendDatasMain}"
+                        android:text="发送数据" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="24dp"
+                        android:background="@drawable/selector_btn"
+                        android:gravity="center"
+                        android:onClick="@{electrictest.seamSecond}"
+                        android:text="从机相同" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_black"></View>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="从机"
+                        android:textSize="20sp" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layoutAnimation="@anim/anim_layout_right"
+                        app:electrictestsecond="@{electrictest}"></android.support.v7.widget.RecyclerView>
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="24dp"
+                        android:background="@drawable/selector_btn"
+                        android:gravity="center"
+                        android:onClick="@{electrictest.sendDatasSecond}"
+                        android:text="发送数据" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="24dp"
+                        android:background="@drawable/selector_btn"
+                        android:gravity="center"
+                        android:onClick="@{electrictest.seamMain}"
+                        android:text="主机相同" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">立方闸机</string>
+
+    <string-array name="work_partens">
+        <item>常开模式</item>
+        <item>常闭模式</item>
+        <item>红外触发模式</item>
+        <item>双向刷卡模式</item>
+        <item>进刷卡,出禁止模式</item>
+        <item>进禁止,出刷卡模式</item>
+        <item>进刷卡,出红外模式</item>
+        <item>进红外,出刷卡模式</item>
+        <item>进禁止,出红外模式</item>
+        <item>进红外,出禁止模式</item>
+        <item>紧急模式,紧急开</item>
+        <item>紧急模式,紧急关</item>
+        <item>自检失败(软重启或重新设置中点)</item>
+    </string-array>
+
+</resources>

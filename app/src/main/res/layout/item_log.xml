@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="logitem"
+            type="cn.com.reformer.brake.vh.LogItemVH" />
+    </data>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:background="@drawable/text_device"
+        android:gravity="center_vertical"
+        android:onClick="@{logitem.onItemClick}"
+        android:paddingLeft="8dp"
+        android:text="@{logitem.content}"
+        android:textSize="16sp">
+
+    </TextView>
+</layout>

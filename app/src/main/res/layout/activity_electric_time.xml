@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="times"
+            type="cn.com.reformer.brake.vh.ElectricTimesVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/title_layout">
+
+            <ImageView
+                android:id="@+id/iv_left"
+                style="@style/title_left"
+                android:onClick="@{times.onBack}" />
+
+            <TextView
+                android:id="@+id/tv_text"
+                style="@style/title_text"
+                android:text="紧急设置" />
+
+            <ImageView
+                style="@style/title_right"
+                android:onClick="@{times.onRefreshClick}"
+                android:src="@mipmap/refresh"
+                app:setImageViewFresh="@{times.isRefresh}" />
+        </RelativeLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            app:electricTimesRefresh="@{times}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout style="@style/rl_message">
+
+                    <ImageView
+                        android:id="@+id/iv_icon1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        android:src="@mipmap/setting_time" />
+
+                    <TextView
+                        android:id="@+id/tv_name1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_icon1"
+                        android:text="主板处电机运行次数"
+                        android:textSize="18sp" />
+
+
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                        android:text="@{String.valueOf(times.mainTimes)}"
+                        android:textSize="16sp" />
+
+                    <View style="@style/divider" />
+
+                </RelativeLayout>
+
+                <RelativeLayout style="@style/rl_message">
+
+                    <ImageView
+                        android:id="@+id/iv_icon9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        android:src="@mipmap/setting_time" />
+
+                    <TextView
+                        android:id="@+id/tv_name9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_icon9"
+                        android:text="从板处电机运行次数"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                        android:text="@{String.valueOf(times.secondTimes)}"
+                        android:textSize="16sp" />
+
+                    <View style="@style/divider" />
+                </RelativeLayout>
+            </LinearLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

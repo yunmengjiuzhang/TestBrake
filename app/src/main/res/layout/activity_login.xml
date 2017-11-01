@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="login"
+            type="cn.com.reformer.brake.vh.LoginVH" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="240dp"
+            android:text="-----尚未登录, 请登录------" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="320dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="320dp"
+            android:background="@drawable/view_shape"
+            android:hint="请输入手机号"
+            android:textColor="#9899b4"
+            android:textSize="16sp"
+            app:phonetextwatcher="@{login}" />
+
+        <EditText
+            android:id="@+id/et_code"
+            android:layout_width="216dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="368dp"
+            android:background="@drawable/view_shape_left"
+            android:hint="请输入验证码"
+            android:textColor="#9899b4"
+            android:textSize="16sp"
+            app:codetextwatcher="@{login}" />
+
+        <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:id="@+id/password_strike_til"-->
+            <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+            <!--android:paddingRight="@dimen/activity_horizontal_margin"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<com.xwray.passwordview.PasswordView-->
+                <!--android:id="@+id/password_strike"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:fontFamily="sans-serif"-->
+                <!--android:hint="@string/password_hint"-->
+                <!--app:useStrikeThrough="true"-->
+                <!--/>-->
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <TextView
+            android:id="@+id/tv_code"
+            android:layout_width="104dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="238dp"
+            android:layout_marginTop="368dp"
+            android:background="@drawable/view_shape_right"
+            android:gravity="center_vertical"
+            android:onClick="@{login.onGetCodeClick}"
+            android:text="@{login.btncode}"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="200dp"-->
+        <!--android:layout_alignParentStart="true"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:background="@mipmap/top_login" />-->
+        <com.gjiazhe.panoramaimageview.PanoramaImageView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:paddingBottom="40dp"
+            android:src="@mipmap/top_login"
+            app:piv_enablePanoramaMode="true"
+            app:piv_invertScrollDirection="false"
+            app:piv_show_scrollbar="false"
+            app:setPanoramaImageView="@{login.gyroscopeObserver}" />
+
+        <Button
+            android:id="@+id/bt_ok"
+            android:layout_width="320dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="64dp"
+            android:background="@drawable/selector_login"
+            android:onClick="@{login.onOKClick}"
+            android:stateListAnimator="@animator/change_size"
+            android:text="确定"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+</layout>

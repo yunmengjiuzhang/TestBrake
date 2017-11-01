@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="cn.com.reformer.brake.utils.UIUtils" />
+
+        <variable
+            name="main2"
+            type="cn.com.reformer.brake.vh.MainVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/title_layout">
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_left"-->
+            <!--style="@style/title_left" />-->
+
+            <TextView
+                style="@style/title_text"
+                android:text="@{main2.title?? `信息`}" />
+
+        </RelativeLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:asddf="@{main2}">
+
+        </android.support.v4.view.ViewPager>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            android:background="#e5e5e5" />
+
+        <RadioGroup
+            android:id="@+id/rg_home"
+            android:layout_width="fill_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="bottom"
+            android:background="#fcfcfc"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:mainRadioGroup="@{main2}">
+
+            <RadioButton
+                android:id="@+id/bottom1"
+                style="@style/main_tab_bottom"
+                android:checked="true"
+                android:drawableTop="@drawable/main_bottom1"
+                android:text="信息"
+                app:radioSize="@{0}" />
+            <!--app:radioSize="@{main2}"-->
+            <!--android:drawableTop="@{main2.changeSize(@drawable/main_bottom1)}"-->
+            <RadioButton
+                android:id="@+id/bottom2"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/main_bottom2"
+                android:text="设置"
+                app:radioSize="@{1}" />
+
+            <RadioButton
+                android:id="@+id/bottom3"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/main_bottom3"
+                android:text="日志"
+                app:radioSize="@{2}" />
+
+            <RadioButton
+                android:id="@+id/bottom4"
+                style="@style/main_tab_bottom"
+                android:drawableTop="@drawable/main_bottom4"
+                android:text="我的"
+                app:radioSize="@{3}" />
+
+        </RadioGroup>
+    </LinearLayout>
+</layout>

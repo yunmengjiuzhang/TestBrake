@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="elec"
+            type="cn.com.reformer.brake.vh.ElectricParamVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/title_layout">
+
+            <ImageView
+                style="@style/title_left"
+                android:onClick="@{elec.onBack}" />
+
+            <TextView
+                style="@style/title_text"
+                android:text="电机参数" />
+
+            <ImageView
+                style="@style/title_right"
+                android:onClick="@{elec.onRefresh}"
+                android:src="@mipmap/refresh"
+                app:setImageViewFresh="@{elec.isRefresh}" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{elec.onTabMain}"
+                android:text="主机"
+                android:textColor="@{elec.isMain  ? @color/cb_true : @color/cb_false}" />
+
+            <View
+                android:layout_width="1sp"
+                android:layout_height="match_parent"
+                android:background="#f0f0f4" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{elec.onTabSecond}"
+                android:text="从机"
+                android:textColor="@{elec.isMain  ? @color/cb_false : @color/cb_true}" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#f0f0f4"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@mipmap/indicator"
+                android:gravity="center"
+                android:visibility="@{elec.isMain?View.VISIBLE : View.INVISIBLE}" />
+
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@mipmap/indicator"
+                android:gravity="center"
+                android:visibility="@{elec.isMain?View.INVISIBLE : View.VISIBLE}" />
+        </LinearLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:elecParame="@{elec}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp">
+
+                <RelativeLayout style="@style/rl_message">
+
+                    <ImageView
+                        android:id="@+id/iv"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/setting_elec" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@id/iv"
+                        android:text="电机开速度"
+                        android:textColor="#6d6f9b"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:lines="1"
+                        android:onClick="@{elec.onOpenClick}"
+                        android:padding="8dp"
+                        android:text="@{elec.openSpeed}"
+                        android:textColor="#2e3553"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <View style="@style/divider" />
+
+                <RelativeLayout style="@style/rl_message">
+
+                    <ImageView
+                        android:id="@+id/iv1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/setting_elec" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@id/iv1"
+                        android:text="电机关速度"
+                        android:textColor="#6d6f9b"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:lines="1"
+                        android:onClick="@{elec.onCloseClick}"
+                        android:padding="8dp"
+                        android:text="@{elec.closeSpeed}"
+                        android:textColor="#2e3553"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <View style="@style/divider" />
+
+                <RelativeLayout style="@style/rl_message">
+
+                    <ImageView
+                        android:id="@+id/iv2"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/setting_elec" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@id/iv2"
+                        android:text="电机自动复位速度"
+                        android:textColor="#6d6f9b"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:lines="1"
+                        android:onClick="@{elec.onAutoResetClick}"
+                        android:padding="8dp"
+                        android:text="@{elec.resetSpeed}"
+                        android:textColor="#2e3553"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <View style="@style/divider" />
+            </LinearLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

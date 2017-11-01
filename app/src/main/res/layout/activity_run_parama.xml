@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="param"
+            type="cn.com.reformer.brake.vh.RunParamVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/title_layout">
+
+            <ImageView
+                style="@style/title_left"
+                android:onClick="@{param.onBack}" />
+
+            <TextView
+                style="@style/title_text"
+                android:text="运行参数" />
+
+            <ImageView
+                style="@style/title_right"
+                android:onClick="@{param.refresh}"
+                android:src="@mipmap/refresh"
+                app:setImageViewFresh="@{param.isRefresh}" />
+
+        </RelativeLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:paramRefresh="@{param}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rl_state_1"
+                    style="@style/rl_message"
+                    android:onClick="@{param.workPattern}">
+
+                    <ImageView
+                        android:id="@+id/iv_icon1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        android:src="@mipmap/run_workpattern" />
+
+                    <TextView
+                        android:id="@+id/tv_name1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_icon1"
+                        android:text="工作模式"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_workpattern"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:lines="1"
+                        android:padding="8dp"
+                        android:text="@{param.workpattenStr}"
+                        android:textColor="#2e3553"
+                        android:textSize="12sp"
+                        app:tempworkpattern="@{param}" />
+
+                    <View style="@style/divider" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_state_5"
+                    style="@style/rl_message"
+                    android:onClick="@{param.cardAuthority}">
+
+                    <ImageView
+                        android:id="@+id/iv_icon5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        android:src="@mipmap/run_card" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBaseline="@+id/tv_name5"
+                        android:layout_alignBottom="@+id/tv_name5"
+                        android:layout_toEndOf="@+id/iv_icon5"
+                        android:text="卡权限保持时间(秒)"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_name5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:padding="8dp"
+                        android:text="@{String.valueOf(param.cardAuthorityInt)+`s`}"
+                        android:textColor="#2e3553"
+                        android:textSize="18sp" />
+
+                    <View style="@style/divider" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_state_6"
+                    style="@style/rl_message"
+                    android:onClick="@{param.infrared}">
+
+                    <ImageView
+                        android:id="@+id/iv_icon6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        android:src="@mipmap/run_redxian" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_icon6"
+                        android:text="红外触发权限保持时间(秒)"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_name6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:padding="8dp"
+                        android:text="@{String.valueOf(param.infraredInt)+`s`}"
+                        android:textColor="#2e3553"
+                        android:textSize="18sp" />
+
+                    <View style="@style/divider" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_state_7"
+                    style="@style/rl_message"
+                    android:onClick="@{param.occupyWay}">
+
+                    <ImageView
+                        android:id="@+id/iv_icon7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        android:src="@mipmap/run_oucuway" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_icon7"
+                        android:text="占用通道超时报警时间"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_name7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:padding="8dp"
+                        android:text="@{String.valueOf(param.occupyWayInt)+`s`}"
+                        android:textColor="#2e3553"
+                        android:textSize="18sp" />
+
+                    <View style="@style/divider" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_state_8"
+                    style="@style/rl_message"
+                    android:onClick="@{param.voiceNext}">
+
+                    <ImageView
+                        android:id="@+id/iv_icon8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        android:src="@mipmap/run_voice" />
+
+                    <TextView
+                        android:id="@+id/tv_name8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_icon8"
+                        android:text="语音再播时间"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_voice_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:padding="8dp"
+                        android:text="@{String.valueOf(param.voiceNextInt)+`s`}"
+                        android:textColor="#2e3553"
+                        android:textSize="18sp" />
+
+                    <View style="@style/divider" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_state_9"
+                    style="@style/rl_message"
+                    android:onClick="@{param.wayClose}">
+
+                    <ImageView
+                        android:id="@+id/iv_icon9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:padding="8dp"
+                        android:src="@mipmap/run_voice" />
+
+                    <TextView
+                        android:id="@+id/tv_name9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_icon9"
+                        android:text="通道关门延时(研发)"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/tv_voice_tim9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="8dp"
+                        android:padding="8dp"
+                        android:text="@{String.valueOf(param.wayCloseInt)+`s`}"
+                        android:textColor="#2e3553"
+                        android:textSize="18sp" />
+
+                    <View style="@style/divider" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="scanitem2"
+            type="cn.com.reformer.brake.vh.ScanItemVH2" />
+    </data>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:background="@drawable/text_device"
+        android:gravity="center_vertical"
+        android:onClick="@{scanitem2.onItemClick}"
+        android:paddingLeft="8dp"
+        android:text="@{scanitem2.mMac}"
+        android:textColor="#000000"
+        android:textSize="14sp">
+
+    </TextView>
+</layout>

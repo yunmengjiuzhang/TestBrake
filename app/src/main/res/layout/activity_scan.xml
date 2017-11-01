@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="scan"
+            type="cn.com.reformer.brake.vh.ScanVH" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ddd">
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            style="@style/title_layout">
+
+            <!--<ImageView-->
+            <!--android:id="@+id/iv_left"-->
+            <!--style="@style/title_left" />-->
+
+            <TextView
+                style="@style/title_text"
+                android:text="选择通道" />
+
+            <ImageView
+                style="@style/title_right"
+                android:onClick="@{scan.onRefreshClick}"
+                android:src="@mipmap/refresh"
+                app:setImageViewFresh="@{scan.isRefresh}" />
+
+        </RelativeLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/bt_ok"
+            android:layout_below="@id/rl"
+            android:layout_margin="8dp"
+            app:swipeRefreshLayout="@{scan}">
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:dividerHeight="8dp"
+                android:padding="8dp"
+                app:arraylist="@{scan.itmesVHs}"
+                app:scanRecyclerView="@{scan}">
+
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <!--<Button-->
+        <!--android:id="@+id/bt_ok"-->
+        <!--android:layout_width="320dp"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_margin="64dp"-->
+        <!--android:layout_marginBottom="16dp"-->
+        <!--android:background="@drawable/selector_login"-->
+        <!--android:onClick="@{scan.onRefreshClick}"-->
+        <!--android:text="刷新列表"-->
+        <!--android:textColor="#ffffff"-->
+        <!--android:textSize="18sp" />-->
+
+
+    </RelativeLayout>
+</layout>

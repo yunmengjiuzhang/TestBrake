@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="setting"
+            type="cn.com.reformer.brake.vh.SettingVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            style="@style/rl_message"
+            android:onClick="@{setting.onClick1}">
+
+            <ImageView
+                android:id="@+id/iv_param_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:src="@mipmap/setting_run" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@mipmap/arrows_right" />
+
+            <View style="@style/divider" />
+
+            <TextView
+                android:id="@+id/tv_param_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/iv_param_1"
+                android:text="运行参数"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/rl_message"
+            android:onClick="@{setting.onClick2}">
+
+            <ImageView
+                android:id="@+id/iv_param_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:src="@mipmap/setting_elec" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@mipmap/arrows_right" />
+
+            <View style="@style/divider" />
+
+            <TextView
+                android:id="@+id/tv_param_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/iv_param_2"
+                android:text="电机参数"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            style="@style/rl_message"
+            android:onClick="@{setting.onClick3}">
+
+            <ImageView
+                android:id="@+id/iv_param_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:src="@mipmap/setting_voice" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@mipmap/arrows_right" />
+
+            <View
+                style="@style/divider"
+                android:layout_width="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_param_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/iv_param_3"
+                android:text="语音播报设置"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/rl_message"
+            android:onClick="@{setting.onClick4}">
+
+            <ImageView
+                android:id="@+id/iv_param_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:src="@mipmap/setting_emergency" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@mipmap/arrows_right" />
+
+            <View
+                style="@style/divider"
+                android:layout_width="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_param_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/iv_param_4"
+                android:text="紧急模式设置"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            style="@style/rl_message"
+            android:onClick="@{setting.onDevicetimes}">
+
+            <ImageView
+                android:id="@+id/iv_icon9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:src="@mipmap/setting_time" />
+
+            <TextView
+                android:id="@+id/tv_name9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/iv_icon9"
+                android:text="电机运行次数"
+                android:textSize="18sp" />
+
+            <!--<ImageView-->
+            <!--android:id="@+id/tv_voice_time9"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_margin="8dp"-->
+            <!--android:background="@mipmap/arrows_right"-->
+            <!--android:padding="8dp" />-->
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@mipmap/arrows_right" />
+
+            <View style="@style/divider" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/rl_message"
+            android:onClick="@{setting.onNewElecParam}">
+
+            <ImageView
+                android:id="@+id/iv_param_test11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:padding="8dp"
+                android:src="@mipmap/setting_elec" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@mipmap/arrows_right" />
+
+            <View style="@style/divider" />
+
+            <TextView
+                android:id="@+id/tv_param_test11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/iv_param_test11"
+                android:text="电机参数(研发新)"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/rl_message"
+            android:onClick="@{setting.onClicktest}">
+
+            <ImageView
+                android:id="@+id/iv_param_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:padding="8dp"
+                android:src="@mipmap/setting_elec" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:src="@mipmap/arrows_right" />
+
+            <View style="@style/divider" />
+
+            <TextView
+                android:id="@+id/tv_param_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/iv_param_test"
+                android:text="电机参数(研发)"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout style="@style/rl_message">
+
+            <ImageView
+                android:id="@+id/iv_param_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:src="@mipmap/setting_elec" />
+
+
+            <CheckBox
+                style="@style/switch_my"
+                app:startFloat="@{setting}" />
+
+            <View
+                style="@style/divider"
+                android:layout_width="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_param_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/iv_param_5"
+                android:text="数据监控(研发)"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/rl_message"
+            android:background="@drawable/selector_btn"
+            android:onClick="@{setting.oneChicken}">
+
+            <ImageView
+                android:id="@+id/iv_param_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="8dp"
+                android:src="@mipmap/setting_elec" />
+
+            <View
+                style="@style/divider"
+                android:layout_width="match_parent" />
+
+            <TextView
+                android:id="@+id/tv_param_10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/iv_param_10"
+                android:text="一键烤机(研发)"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="message"
+            type="cn.com.reformer.brake.vh.MessageVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:text="@{`工作模式: `+message.workPatten}"
+            android:textColor="#2d355e"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:background="#f0f0f4" />
+
+        <RelativeLayout
+            android:id="@+id/rl_state_3"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:background="#ffffff"
+            android:padding="24dp">
+
+            <RelativeLayout
+                android:layout_width="184dp"
+                android:layout_height="match_parent"
+                android:background="@mipmap/brake_close"
+                app:changeBrakeUI="@{message.arm}">
+
+                <LinearLayout
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            style="@style/point"
+                            android:src="@{message.point1?@drawable/point_red:@drawable/point_blue}" />
+
+                        <ImageView
+                            style="@style/point"
+                            android:layout_alignParentRight="true"
+                            android:src="@{message.point1?@drawable/point_red:@drawable/point_blue}" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            style="@style/point"
+                            android:src="@{message.point2?@drawable/point_red:@drawable/point_blue}" />
+
+                        <ImageView
+                            style="@style/point"
+                            android:layout_alignParentRight="true"
+                            android:src="@{message.point2?@drawable/point_red:@drawable/point_blue}" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            style="@style/point"
+                            android:src="@{message.point3?@drawable/point_red:@drawable/point_blue}" />
+
+                        <ImageView
+                            style="@style/point"
+                            android:layout_alignParentRight="true"
+                            android:src="@{message.point3?@drawable/point_red:@drawable/point_blue}" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            style="@style/point"
+                            android:src="@{message.point4?@drawable/point_red:@drawable/point_blue}" />
+
+                        <ImageView
+                            style="@style/point"
+                            android:layout_alignParentRight="true"
+                            android:src="@{message.point4?@drawable/point_red:@drawable/point_blue}" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            style="@style/point"
+                            android:src="@{message.point5?@drawable/point_red:@drawable/point_blue}" />
+
+                        <ImageView
+                            style="@style/point"
+                            android:layout_alignParentRight="true"
+                            android:src="@{message.point5?@drawable/point_red:@drawable/point_blue}" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            style="@style/point"
+                            android:src="@{message.point6?@drawable/point_red:@drawable/point_blue}" />
+
+                        <ImageView
+                            style="@style/point"
+                            android:layout_alignParentRight="true"
+                            android:src="@{message.point6?@drawable/point_red:@drawable/point_blue}" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            style="@style/point"
+                            android:src="@{message.point7?@drawable/point_red:@drawable/point_blue}" />
+
+                        <ImageView
+                            style="@style/point"
+                            android:layout_alignParentRight="true"
+                            android:src="@{message.point7?@drawable/point_red:@drawable/point_blue}" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <ImageView
+                            style="@style/point"
+                            android:src="@{message.point8?@drawable/point_red:@drawable/point_blue}" />
+
+                        <ImageView
+                            style="@style/point"
+                            android:layout_alignParentRight="true"
+                            android:src="@{message.point8?@drawable/point_red:@drawable/point_blue}" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/btn_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:onClick="@{message.enterOpen}"
+                    android:src="@drawable/selector_enter"
+                    android:stateListAnimator="@animator/change_size" />
+
+                <ImageView
+                    android:id="@+id/btn_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:onClick="@{message.outOpen}"
+                    android:src="@drawable/selector_out"
+                    android:stateListAnimator="@animator/change_size" />
+
+
+                <ImageView
+                    android:id="@+id/btn_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:onClick="@{message.close}"
+                    android:src="@drawable/selector_close"
+                    android:stateListAnimator="@animator/change_size" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="#f0f0f4" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@{`进人数`+message.enterPeple}"
+                android:textColor="#2d355e"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="#f0f0f4" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@{`出人数`+message.outPeple}"
+                android:textColor="#2d355e"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="#f0f0f4" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@{`进违法人数`+message.unenterPeple}"
+                android:textColor="#2d355e"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1sp"
+                android:background="#f0f0f4" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="@{`出违法人数`+message.unoutPeple}"
+                android:textColor="#2d355e"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

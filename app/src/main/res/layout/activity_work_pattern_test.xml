@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="workPatterntest"
+            type="cn.com.reformer.brake.vh.WorkPatternTestVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/title_layout">
+
+            <ImageView
+                android:id="@+id/iv_left"
+                style="@style/title_left"
+                android:onClick="@{workPatterntest.onBack}" />
+
+            <TextView
+                android:id="@+id/tv_text"
+                style="@style/title_text"
+                android:text="工作模式" />
+        </RelativeLayout>
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:divider="@drawable/list_divider"
+            android:padding="6dp"
+            bind:itemView="@{workPatterntest.itemView}"
+            bind:items="@{workPatterntest.itemVHs}">
+
+
+        </ListView>
+    </LinearLayout>
+</layout>

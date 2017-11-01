@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="voiceSwitch"
+            type="cn.com.reformer.brake.vh.VoiceSwitchVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/title_layout">
+
+            <ImageView
+                style="@style/title_left"
+                android:onClick="@{voiceSwitch.onBack}" />
+
+            <TextView
+                style="@style/title_text"
+                android:text="语音播报开关" />
+
+            <TextView
+                style="@style/title_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{voiceSwitch.save}"
+                android:text="保存"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            app:voiceswitchRefresh="@{voiceSwitch}">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                bind:itemView="@{voiceSwitch.itemView}"
+                bind:items="@{voiceSwitch.itemVHs}">
+
+            </ListView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </LinearLayout>
+</layout>

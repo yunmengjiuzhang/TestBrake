@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '25.0.0'
+    defaultConfig {
+        applicationId "cn.com.reformer.brake"
+        minSdkVersion 18
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.btn_change.runner.AndroidJUnitRunner"
+
+//        ndk {
+//            // 设置支持的SO库架构
+//            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+//        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(path: ':bles')
+    compile project(path: ':myutils')
+    //百度统计和崩溃分析
+    compile files('libs/Baidu_Mtj_3.7.6.1.jar')
+
+    ////    compile 'com.google.code.gson:gson:2.8.0'
+//    compile 'com.tencent.bugly:crashreport:latest.release'
+//    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+//    compile 'com.tencent.bugly:nativecrashreport:latest.release'
+//    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    compile 'com.kelin.mvvmlight:library:1.0.0'
+    compile 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter:2.1.0'
+    compile 'me.tatarka.bindingcollectionadapter2:bindingcollectionadapter-recyclerview:2.1.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'me.imid.swipebacklayout.lib:library:1.0.0'
+    compile 'com.gjiazhe:PanoramaImageView:1.0'
+    compile 'com.xwray:passwordview:1.0'
+}

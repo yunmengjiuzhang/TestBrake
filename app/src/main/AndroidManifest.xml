@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.com.reformer.brake">
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.huawei.addviewpermission" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!---->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- Android6.0 蓝牙扫描才需要 -->
+    <uses-permission-sdk-23 android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.UPDATE_APP_OPS_STATS" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- （蓝牙为手表统计必填） -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- （3.7.1 新增） -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <application
+        android:name=".BaseApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/brake_close"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/wfTheme">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/wfTheme"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/wfTheme"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".WorkPatternActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/wfTheme" />
+        <activity
+            android:name=".VoiceSwitchActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/wfTheme" />
+        <activity
+            android:name=".ScanActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/wfTheme" />
+        <activity
+            android:name=".ElectricParamTestActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/wfTheme" />
+        <activity
+            android:name=".ElecrcParamActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/wfTheme" />
+        <activity
+            android:name=".ElectricTimeActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/wfTheme"></activity>
+        <activity
+            android:name=".ElectricParamTestNewActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/wfTheme"></activity>
+        <activity
+            android:name=".EmergencyActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/wfTheme" />
+        <activity
+            android:name=".RunParamActivity"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/wfTheme" />
+        <!-- 测试悬浮窗 -->
+        <service android:name=".views.floatView.FloatWindowService">
+            <intent-filter>
+                <action android:name="wangfei.floatwindow" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".views.desk.WidgetReceiver">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <!-- <meta-data -->
+            <!-- android:name="android.appwidget.provider" -->
+            <!-- android:resource="" /> -->
+
+        </receiver>
+
+        <service android:name=".views.desk.UpdateWidgetService" />
+
+
+        <!-- 您从百度网站获取的 APP  KEY -->
+        <meta-data
+            android:name="BaiduMobAd_STAT_ID"
+            android:value="2d26d6a6d3" />
+        <!-- 渠道商编号,根据实际情况自行填写 -->
+        <meta-data
+            android:name="BaiduMobAd_CHANNEL"
+            android:value="非渠道" />
+        <!-- 是否开启错误日志统计，默认为 false -->
+        <meta-data
+            android:name="BaiduMobAd_EXCEPTION_LOG"
+            android:value="true" />
+        <!--
+        日志发送策略， 可选值： APP_START、 ONCE_A_DAY、 SET_TIME_INTERVAL，
+        默认为 APP_START
+        -->
+        <meta-data
+            android:name="BaiduMobAd_SEND_STRATEGY"
+            android:value="APP_START" />
+        <!-- 日志发送策略  为 SET_TIME_INTERVAL 时，需设定时间间隔.取值为 -‐24 的整数，默认为 1,单位为小时 -->
+        <meta-data
+            android:name="BaiduMobAd_TIME_INTERVAL"
+            android:value="1" />
+        <!-- 日志仅在 wifi 网络下发送，默认为 false -->
+        <meta-data
+            android:name="BaiduMobAd_ONLY_WIFI"
+            android:value="false" />
+        <!-- 是否获取基站位置信息  ,默认为 true -->
+        <meta-data
+            android:name="BaiduMobAd_CELL_LOCATION"
+            android:value="true" />
+        <!-- 是否获取 GPS 位置信息，默认为 true -->
+        <meta-data
+            android:name="BaiduMobAd_GPS_LOCATION"
+            android:value="true" />
+        <!-- 是否获取 WIFI 位置信息，默认为 true -->
+        <meta-data
+            android:name="BaiduMobAd_WIFI_LOCATION"
+            android:value="true" />
+
+    </application>
+
+</manifest>

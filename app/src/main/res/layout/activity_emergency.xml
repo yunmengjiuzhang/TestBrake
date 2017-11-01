@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="emergency"
+            type="cn.com.reformer.brake.vh.EmergencyVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <RelativeLayout style="@style/title_layout">
+
+            <ImageView
+                android:id="@+id/iv_left"
+                style="@style/title_left"
+                android:onClick="@{emergency.onBack}" />
+
+            <TextView
+                android:id="@+id/tv_text"
+                style="@style/title_text"
+                android:text="紧急设置" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="96dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{emergency.onOpen}"
+                android:src="@mipmap/emergency1"
+                android:stateListAnimator="@animator/change_size" />
+
+            <ImageView
+                android:layout_width="96dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{emergency.onClose}"
+                android:src="@mipmap/emergency2"
+                android:stateListAnimator="@animator/change_size" />
+
+            <ImageView
+                android:layout_width="96dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{emergency.onCancle}"
+                android:src="@mipmap/emergency3"
+                android:stateListAnimator="@animator/change_size" />
+
+            <ImageView
+                android:layout_width="96dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{emergency.onMidpoint}"
+                android:src="@mipmap/emergency4"
+                android:stateListAnimator="@animator/change_size" />
+
+            <ImageView
+                android:layout_width="96dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:onClick="@{emergency.onOK}"
+                android:src="@mipmap/emergency5"
+                android:stateListAnimator="@animator/change_size" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/selector_login"
+            android:onClick="@{emergency.onResetSoft}"
+            android:stateListAnimator="@animator/change_size"
+            android:text="软重启"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:background="@drawable/selector_login"
+            android:onClick="@{emergency.onReset}"
+            android:stateListAnimator="@animator/change_size"
+            android:text="恢复出厂设置"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+    </LinearLayout>
+</layout>

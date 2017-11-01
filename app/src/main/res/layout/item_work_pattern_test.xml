@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="itemWorkpatter"
+            type="cn.com.reformer.brake.vh.WorkPatternTestItmeVH" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="@{itemWorkpatter.onClick}"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <LinearLayout
+            style="@style/rl_message"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <CheckBox
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/selector_radio"
+                android:button="@null"
+                android:checked="@{itemWorkpatter.isChecked }"
+                android:clickable="false" />
+
+            <TextView
+                android:id="@+id/tv_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:text="@{itemWorkpatter.name}"
+                android:textColor="@{itemWorkpatter.isChecked  ? @color/cb_true : @color/cb_false}"
+                android:textSize="16sp" />
+
+            <!--<item name="android:layout_width">60dp</item>-->
+            <!--<item name="android:layout_height">wrap_content</item>-->
+            <!--<item name="android:layout_alignParentRight">true</item>-->
+            <!--<item name="android:layout_centerVertical">true</item>-->
+            <!--<item name="android:layout_marginRight">16dp</item>-->
+            <!--<item name="android:background">@drawable/selector_checkbox</item>-->
+            <!--<item name="android:button">@null</item>-->
+        </LinearLayout>
+
+        <View style="@style/divider" />
+    </LinearLayout>
+</layout>
